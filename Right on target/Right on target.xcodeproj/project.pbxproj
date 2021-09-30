@@ -13,6 +13,8 @@
 		BE41AA802703675F00D2B8C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE41AA7E2703675F00D2B8C2 /* Main.storyboard */; };
 		BE41AA822703676000D2B8C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE41AA812703676000D2B8C2 /* Assets.xcassets */; };
 		BE41AA852703676000D2B8C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE41AA832703676000D2B8C2 /* LaunchScreen.storyboard */; };
+		BE41AA8D2704A22D00D2B8C2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41AA8C2704A22D00D2B8C2 /* SecondViewController.swift */; };
+		BE631CFB27057CED00FE041E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE631CFA27057CED00FE041E /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BE41AA812703676000D2B8C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE41AA842703676000D2B8C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE41AA862703676000D2B8C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE41AA8C2704A22D00D2B8C2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		BE631CFA27057CED00FE041E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		BE41AA772703675F00D2B8C2 /* Right on target */ = {
 			isa = PBXGroup;
 			children = (
+				BE631CF927057C4500FE041E /*  Model */,
 				BE41AA782703675F00D2B8C2 /* AppDelegate.swift */,
 				BE41AA7A2703675F00D2B8C2 /* SceneDelegate.swift */,
 				BE41AA7C2703675F00D2B8C2 /* ViewController.swift */,
@@ -63,8 +68,17 @@
 				BE41AA812703676000D2B8C2 /* Assets.xcassets */,
 				BE41AA832703676000D2B8C2 /* LaunchScreen.storyboard */,
 				BE41AA862703676000D2B8C2 /* Info.plist */,
+				BE41AA8C2704A22D00D2B8C2 /* SecondViewController.swift */,
 			);
 			path = "Right on target";
+			sourceTree = "<group>";
+		};
+		BE631CF927057C4500FE041E /*  Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE631CFA27057CED00FE041E /* Game.swift */,
+			);
+			path = " Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE41AA8D2704A22D00D2B8C2 /* SecondViewController.swift in Sources */,
+				BE631CFB27057CED00FE041E /* Game.swift in Sources */,
 				BE41AA7D2703675F00D2B8C2 /* ViewController.swift in Sources */,
 				BE41AA792703675F00D2B8C2 /* AppDelegate.swift in Sources */,
 				BE41AA7B2703675F00D2B8C2 /* SceneDelegate.swift in Sources */,
@@ -292,7 +308,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kotsan777.Right-on-target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -311,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kotsan777.Right-on-target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

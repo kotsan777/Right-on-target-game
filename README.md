@@ -10,4 +10,7 @@
 - U have 5 rounds
 - after 5 rounds present you alert with your result point 
 
-![Screenshot](screenshot.png)
+## Versions:
+- v1.0 - raw version
+- v1.1 - added viewDidLoad. You can start game without tap button "Проверить"
+- v1.2 - refactoring code with MVC pattern

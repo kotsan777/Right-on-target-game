@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                     <color key="titleColor" systemColor="systemIndigoColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="checkNumber" destination="BYZ-38-t0r" eventType="touchUpInside" id="QTV-Vv-pGc"/>
+                                    <action selector="checkNumber" destination="BYZ-38-t0r" eventType="touchUpInside" id="XNL-2Y-8BW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btt-QQ-6Ut">
@@ -50,19 +50,39 @@
                             <constraint firstItem="5ui-DH-eGc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="z5K-qM-CI4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X02-IH-ijX"/>
                     <connections>
-                        <outlet property="label" destination="Btt-QQ-6Ut" id="zYU-3r-cWD"/>
-                        <outlet property="slider" destination="5ui-DH-eGc" id="BP6-Cx-zVQ"/>
+                        <outlet property="label" destination="Btt-QQ-6Ut" id="rEw-v5-cSl"/>
+                        <outlet property="slider" destination="5ui-DH-eGc" id="3nE-hM-KPg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19.419642857142858" y="76.811594202898561"/>
+            <point key="canvasLocation" x="762.72321428571422" y="76.811594202898561"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="83g-mB-RX7">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="9kJ-Tl-W39" customClass="SecondViewController" customModule="Right_on_target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WPn-9Z-NeN">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5PC-l9-GPV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Wa-1d-2WR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jaG-Gd-pO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422.9910714285713" y="98.550724637681171"/>
         </scene>
     </scenes>
     <resources>
         <image name="01.square.fill" catalog="system" width="128" height="114"/>
         <image name="50.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
