@@ -3,57 +3,44 @@
 import UIKit
 protocol GameProtocol {
     var score: Int {get}
-    var currentSecretValue: Int {get}
+    var secretValueGenerator: GeneratorProtocol! {get}
+    var currentRound: GameRoundProtocol! {get set}
     var isGameEnded: Bool {get}
     func restartGame()
     func startNewRound()
-    func calculateScore(with value: Int)
 }
 
 class Game: GameProtocol {
     var score: Int = 0
-    private var minSecretValue: Int
-    private var maxSecretValue: Int
-    var currentSecretValue: Int = 0
+    var secretValueGenerator: GeneratorProtocol!
     private var lastRound: Int
-    private var currentRound: Int = 1
+    var currentRound: GameRoundProtocol!
+    
     var isGameEnded: Bool {
-        if currentRound >= lastRound {
+        if currentRound.round >= lastRound {
             return true
         }
         else {
             return false
         }
     }
-    init?(startValue: Int, endValue: Int, rounds: Int) {
-        guard startValue <= endValue else {
-            return nil
-        }
-        minSecretValue = startValue
-        maxSecretValue = endValue
-        lastRound = rounds
-        currentSecretValue = self.getNewSecretValue()
-    }
+    
     func restartGame() {
-        currentRound = 0
+        currentRound.currentSecretValue = secretValueGenerator.getRandomValue()
+        currentRound.round = 1
         score = 0
         startNewRound()
     }
+    
     func startNewRound() {
-        currentSecretValue = self.getNewSecretValue()
-        currentRound += 1
+        currentRound.currentSecretValue = secretValueGenerator.getRandomValue()
+        currentRound.round += 1
+        score += currentRound.score
     }
-    private func getNewSecretValue() -> Int {
-        (minSecretValue...maxSecretValue).randomElement()!
-    }
-    func calculateScore(with value: Int) {
-        if value > currentSecretValue {
-            score += 50 - value + currentSecretValue
-        } else if value < currentSecretValue {
-            score += 50 - currentSecretValue + value
-        }
-        else {
-            score += 50
-        }
+    
+    init?(rounds: Int, generator: Generator!, currentRound: GameRoundProtocol!) {
+        self.currentRound = currentRound
+        lastRound = rounds
+        secretValueGenerator = generator
     }
 }

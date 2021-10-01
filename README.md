@@ -14,3 +14,4 @@
 - v1.0 - raw version
 - v1.1 - added viewDidLoad. You can start game without tap button "Проверить"
 - v1.2 - refactoring code with MVC pattern
+- v1.3 - refactoring code. Divide essence "Game" to "Game", "RoundGame", "Generator"

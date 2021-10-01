@@ -4,6 +4,8 @@
 import UIKit
 class ViewController: UIViewController {
     var game: Game!
+    var gameRound: GameRound!
+    var generator: Generator!
     @IBOutlet var label: UILabel!
     @IBOutlet var slider: UISlider!
     
@@ -11,14 +13,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game = Game.init(startValue: 1, endValue: 50, rounds: 5)
-        updateLabel(newText: String(game.currentSecretValue))
+        generator = Generator.init(startValue: 1, endValue: 300)
+        gameRound = GameRound.init(generator: generator)
+        game = Game.init(rounds: 5, generator: generator, currentRound: gameRound)
+        updateLabel(newText: String(gameRound.currentSecretValue))
     }
     
     // MARK: - Взаимодействие View - Model
     
     @IBAction func checkNumber() {
-        game.calculateScore(with: Int(slider.value))
+        gameRound.calculateScore(with: Int(slider.value))
         if game.isGameEnded {
             shoewAlertWith(score: game.score)
             game.restartGame()
@@ -26,7 +30,7 @@ class ViewController: UIViewController {
         else {
             game.startNewRound()
         }
-        updateLabel(newText: String(game.currentSecretValue))
+        updateLabel(newText: String(gameRound.currentSecretValue))
     }
     
     // MARK: - Обновление View
