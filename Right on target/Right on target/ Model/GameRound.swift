@@ -4,7 +4,7 @@
 
 import UIKit
 protocol GameRoundProtocol {
-    var score: Int {get}
+    var score: Int {get set}
     var currentSecretValue: Int! {get set}
     var round: Int {get set}
     func calculateScore(with value: Int)

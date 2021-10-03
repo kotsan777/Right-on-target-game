@@ -11,7 +11,17 @@
 - after 5 rounds present you alert with your result point 
 
 ## Versions:
-- v1.0 - raw version
-- v1.1 - added viewDidLoad. You can start game without tap button "Проверить"
-- v1.2 - refactoring code with MVC pattern
-- v1.3 - refactoring code. Divide essence "Game" to "Game", "RoundGame", "Generator"
+### v.1.0
+- Raw version
+### v1.1
+- Added viewDidLoad. You can start game without tap button "Проверить"
+### v1.2
+- Refactoring code with MVC pattern
+### v1.3
+- Refactoring code. 
+- Divide essence "Game" to "Game", "RoundGame", "Generator"
+### v1.4
+- Add new game "SelectColor"
+- Add new extension for UIColor (RGB to hex & hex to RGB)
+- Add new initial storyboard "Choose game"
+

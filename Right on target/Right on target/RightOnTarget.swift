@@ -2,7 +2,7 @@
 //  Right on target
 
 import UIKit
-class ViewController: UIViewController {
+class RightOnTarget: UIViewController {
     var game: Game!
     var gameRound: GameRound!
     var generator: Generator!
@@ -11,11 +11,11 @@ class ViewController: UIViewController {
     
     // MARK: - Жизненный цикл
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        generator = Generator.init(startValue: 1, endValue: 300)
+    override func loadView() {
+        super.loadView()
+        generator = Generator.init(startValue: 1, endValue: 50)
         gameRound = GameRound.init(generator: generator)
-        game = Game.init(rounds: 5, generator: generator, currentRound: gameRound)
+        game = Game.init(rounds: 5, generator: generator, gameRound: gameRound)
         updateLabel(newText: String(gameRound.currentSecretValue))
     }
     
@@ -33,6 +33,9 @@ class ViewController: UIViewController {
         updateLabel(newText: String(gameRound.currentSecretValue))
     }
     
+    @IBAction func hideCurrentScene() {
+        self.dismiss(animated: true, completion: nil)
+    }
     // MARK: - Обновление View
     
     private func shoewAlertWith(score: Int) {

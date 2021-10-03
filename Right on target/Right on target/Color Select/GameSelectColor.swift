@@ -1,20 +1,22 @@
+//
 //  Game.swift
 //  Right on target
+
+
 import UIKit
-protocol GameProtocol {
+protocol GameSelectColorProtocol {
     var score: Int {get}
-    var secretValueGenerator: GeneratorProtocol! {get}
-    var currentRound: GameRoundProtocol! {get set}
+    var secretValueGenerator: GeneratorSelectColorProtocol! {get set}
+    var currentRound: GameRoundSelectColorProtocol! {get set}
     var isGameEnded: Bool {get}
     func restartGame()
     func startNewRound()
 }
-
-class Game: GameProtocol {
-    var score: Int = 0
-    var secretValueGenerator: GeneratorProtocol!
+class GameSelectColor: GameSelectColorProtocol {
     private var lastRound: Int
-    var currentRound: GameRoundProtocol!
+    var score: Int = 0
+    var secretValueGenerator: GeneratorSelectColorProtocol!
+    var currentRound: GameRoundSelectColorProtocol!
     
     var isGameEnded: Bool {
         if currentRound.round >= lastRound {
@@ -39,10 +41,10 @@ class Game: GameProtocol {
         currentRound.round += 1
         score += currentRound.score
     }
-    
-    init?(rounds: Int, generator: Generator!, gameRound: GameRoundProtocol!) {
+    init(rounds: Int, generator: GeneratorSelectColor!, gameRound: GameRoundSelectColor!) {
         self.currentRound = gameRound
-        lastRound = rounds
+        self.lastRound = rounds
         secretValueGenerator = generator
+        
     }
 }
