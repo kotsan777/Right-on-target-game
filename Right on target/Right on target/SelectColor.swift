@@ -5,9 +5,9 @@
 import UIKit
 
 class SelectColor: UIViewController {
-    var game: GameSelectColor!
-    var gameRound: GameRoundSelectColor!
-    var generator: GeneratorSelectColor!
+    var game: Game<String>!
+    var gameRound: GameRound<String>!
+    var generator: Generator<String>!
     @IBOutlet var randomColorLabel: UILabel!
     @IBOutlet var buttonColor1: UIButton!
     @IBOutlet var buttonColor2: UIButton!
@@ -18,12 +18,11 @@ class SelectColor: UIViewController {
     
     override func loadView() {
         super.loadView()
-        generator = GeneratorSelectColor.init()
-        gameRound = GameRoundSelectColor.init(generator: generator)
-        game = GameSelectColor.init(rounds: 5, generator: generator, gameRound: gameRound)
+        generator = Generator.init()
+        gameRound = GameRound.init(generator: generator)
+        game = Game.init(rounds: 5, generator: generator, gameRound: gameRound)
         updateHexColorLabel()
         updateVariants()
-        
         
     }
     

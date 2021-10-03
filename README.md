@@ -24,4 +24,10 @@
 - Add new game "SelectColor"
 - Add new extension for UIColor (RGB to hex & hex to RGB)
 - Add new initial storyboard "Choose game"
+### v1.4.1
+- Refactoring code
+- Used Generic
+- Created universal architecture for 2 games
+- 2 games designed at same models
+
 

@@ -3,9 +3,9 @@
 
 import UIKit
 class RightOnTarget: UIViewController {
-    var game: Game!
-    var gameRound: GameRound!
-    var generator: Generator!
+    var game: Game<Int>!
+    var gameRound: GameRound<Int>!
+    var generator: Generator<Int>!
     @IBOutlet var label: UILabel!
     @IBOutlet var slider: UISlider!
     

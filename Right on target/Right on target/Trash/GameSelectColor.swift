@@ -12,6 +12,7 @@ protocol GameSelectColorProtocol {
     func restartGame()
     func startNewRound()
 }
+
 class GameSelectColor: GameSelectColorProtocol {
     private var lastRound: Int
     var score: Int = 0

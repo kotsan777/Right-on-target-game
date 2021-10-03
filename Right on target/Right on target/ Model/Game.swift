@@ -2,19 +2,21 @@
 //  Right on target
 import UIKit
 protocol GameProtocol {
+    associatedtype ItemType: Comparable
     var score: Int {get}
-    var secretValueGenerator: GeneratorProtocol! {get}
-    var currentRound: GameRoundProtocol! {get set}
+    var secretValueGenerator: Generator<ItemType>! {get set}
+    var currentRound: GameRound<ItemType>! {get set}
     var isGameEnded: Bool {get}
     func restartGame()
     func startNewRound()
 }
 
-class Game: GameProtocol {
+class Game<T: Comparable>: GameProtocol {
+    typealias ItemType = T
     var score: Int = 0
-    var secretValueGenerator: GeneratorProtocol!
+    var secretValueGenerator: Generator<ItemType>!
     private var lastRound: Int
-    var currentRound: GameRoundProtocol!
+    var currentRound: GameRound<ItemType>!
     
     var isGameEnded: Bool {
         if currentRound.round >= lastRound {
@@ -40,7 +42,7 @@ class Game: GameProtocol {
         score += currentRound.score
     }
     
-    init?(rounds: Int, generator: Generator!, gameRound: GameRoundProtocol!) {
+    init?(rounds: Int, generator: Generator<T>!, gameRound: GameRound<T>!) {
         self.currentRound = gameRound
         lastRound = rounds
         secretValueGenerator = generator
