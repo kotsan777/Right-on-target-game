@@ -13,6 +13,7 @@ class SelectColor: UIViewController {
     @IBOutlet var buttonColor2: UIButton!
     @IBOutlet var buttonColor3: UIButton!
     @IBOutlet var buttonColor4: UIButton!
+    @IBOutlet var buttonColor5: UIButton!
     
     // MARK: - Жизненный цикл
     
@@ -21,9 +22,10 @@ class SelectColor: UIViewController {
         generator = Generator.init()
         gameRound = GameRound.init(generator: generator)
         game = Game.init(rounds: 5, generator: generator, gameRound: gameRound)
+        squareToCircle()
         updateHexColorLabel()
         updateVariants()
-        
+        setLabelStyle()
     }
     
     // MARK: - Взаимодействие View - Model
@@ -54,7 +56,7 @@ class SelectColor: UIViewController {
     }
     
     func updateVariants() {
-        let arrayOfButtons = [buttonColor1,buttonColor2,buttonColor3,buttonColor4]
+        let arrayOfButtons = [buttonColor1,buttonColor2,buttonColor3,buttonColor4,buttonColor5]
         
         for i in arrayOfButtons {
             if let buttons = i {
@@ -71,6 +73,18 @@ class SelectColor: UIViewController {
         let alert = UIAlertController.init(title: "Игра окончена", message: "Вы заработали \(score) очков", preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "Начать заново", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func squareToCircle() {
+        let arrayOfButtons = [buttonColor1,buttonColor2,buttonColor3,buttonColor4,buttonColor5]
+        for i in arrayOfButtons {
+            i?.layer.cornerRadius = 45
+        }
+    }
+    private func setLabelStyle() {
+        randomColorLabel.layer.masksToBounds = true
+        randomColorLabel.layer.cornerRadius = 10
+        randomColorLabel.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
 }

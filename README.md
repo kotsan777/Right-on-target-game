@@ -29,5 +29,6 @@
 - Used Generic
 - Created universal architecture for 2 games
 - 2 games designed at same models
-
-
+### v1.5
+- Edited constraints for each scenes
+- Edited interface
