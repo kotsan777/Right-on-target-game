@@ -32,3 +32,8 @@
 ### v1.5
 - Edited constraints for each scenes
 - Edited interface
+- Now you can navigate at the app by NavigationController
+### v1.6
+- Added button "Обновить игру" - restore game
+- Added info about current score in games "Select Color" & "Right on target"
+- Added info about current round in games "Select Color" & "Right on target"

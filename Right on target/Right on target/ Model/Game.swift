@@ -15,7 +15,7 @@ class Game<T: Comparable>: GameProtocol {
     typealias ItemType = T
     var score: Int = 0
     var secretValueGenerator: Generator<ItemType>!
-    private var lastRound: Int
+    var lastRound: Int
     var currentRound: GameRound<ItemType>!
     
     var isGameEnded: Bool {

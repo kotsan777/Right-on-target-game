@@ -74,15 +74,13 @@
 		BE41AA772703675F00D2B8C2 /* Right on target */ = {
 			isa = PBXGroup;
 			children = (
+				BEFEF730271126040034EB28 /* VC */,
 				BE7AA26F2708AE9500BB480E /* Trash */,
 				BE7AA26C2708A1BA00BB480E /* Extension */,
 				BE631CF927057C4500FE041E /*  Model */,
 				BE41AA782703675F00D2B8C2 /* AppDelegate.swift */,
-				BE7AA26A270868A700BB480E /* ChooseGame.swift */,
-				BE41AA8C2704A22D00D2B8C2 /* SelectColor.swift */,
 				BE41AA7E2703675F00D2B8C2 /* Main.storyboard */,
 				BE41AA7A2703675F00D2B8C2 /* SceneDelegate.swift */,
-				BE41AA7C2703675F00D2B8C2 /* RightOnTarget.swift */,
 				BE41AA812703676000D2B8C2 /* Assets.xcassets */,
 				BE41AA832703676000D2B8C2 /* LaunchScreen.storyboard */,
 				BE41AA862703676000D2B8C2 /* Info.plist */,
@@ -116,6 +114,16 @@
 				BE7AA2742708AEE000BB480E /* GeneratorSelectColor.swift */,
 			);
 			path = Trash;
+			sourceTree = "<group>";
+		};
+		BEFEF730271126040034EB28 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				BE7AA26A270868A700BB480E /* ChooseGame.swift */,
+				BE41AA8C2704A22D00D2B8C2 /* SelectColor.swift */,
+				BE41AA7C2703675F00D2B8C2 /* RightOnTarget.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,7 +362,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kotsan777.Right-on-target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -375,7 +383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kotsan777.Right-on-target";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

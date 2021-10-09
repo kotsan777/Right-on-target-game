@@ -8,6 +8,8 @@ class SelectColor: UIViewController {
     var game: Game<String>!
     var gameRound: GameRound<String>!
     var generator: Generator<String>!
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var roundLabel: UILabel!
     @IBOutlet var randomColorLabel: UILabel!
     @IBOutlet var buttonColor1: UIButton!
     @IBOutlet var buttonColor2: UIButton!
@@ -26,6 +28,8 @@ class SelectColor: UIViewController {
         updateHexColorLabel()
         updateVariants()
         setLabelStyle()
+        updateScoreLabel(score: game.score)
+        updateRoundLabel(currentRound: gameRound.round, rounds: game.lastRound)
     }
     
     // MARK: - Взаимодействие View - Model
@@ -41,13 +45,19 @@ class SelectColor: UIViewController {
         }
         updateHexColorLabel()
         updateVariants()
+        updateScoreLabel(score: game.score)
+        updateRoundLabel(currentRound: gameRound.round, rounds: game.lastRound)
         
     }
     
-    
-    @IBAction func hideCurrentScene() {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func restoreGame() {
+        game.restartGame()
+        updateHexColorLabel()
+        updateVariants()
+        updateScoreLabel(score: game.score)
+        updateRoundLabel(currentRound: gameRound.round, rounds: game.lastRound)
     }
+    
     
     // MARK: - Обновление View
     
@@ -87,4 +97,10 @@ class SelectColor: UIViewController {
         randomColorLabel.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
+    private func updateScoreLabel(score: Int) {
+        scoreLabel.text = "Очки: \(score)"
+    }
+    private func updateRoundLabel(currentRound: Int, rounds: Int) {
+        roundLabel.text = "Раунд: \(currentRound) / \(rounds)"
+    }
 }

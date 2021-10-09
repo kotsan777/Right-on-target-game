@@ -8,6 +8,8 @@ class RightOnTarget: UIViewController {
     var generator: Generator<Int>!
     @IBOutlet var label: UILabel!
     @IBOutlet var slider: UISlider!
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var roundLabel: UILabel!
     
     // MARK: - Жизненный цикл
     
@@ -17,6 +19,8 @@ class RightOnTarget: UIViewController {
         gameRound = GameRound.init(generator: generator)
         game = Game.init(rounds: 5, generator: generator, gameRound: gameRound)
         updateLabel(newText: String(gameRound.currentSecretValue))
+        updateScoreLabel(newText: String(game.score))
+        updateRoundLabel(currentRound: game.currentRound.round, allRounds: game.lastRound)
     }
     
     // MARK: - Взаимодействие View - Model
@@ -31,11 +35,17 @@ class RightOnTarget: UIViewController {
             game.startNewRound()
         }
         updateLabel(newText: String(gameRound.currentSecretValue))
+        updateScoreLabel(newText: String(game.score))
+        updateRoundLabel(currentRound: game.currentRound.round, allRounds: game.lastRound)
     }
     
-    @IBAction func hideCurrentScene() {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func restoreGame() {
+        game.restartGame()
+        updateLabel(newText: String(gameRound.currentSecretValue))
+        updateScoreLabel(newText: String(game.score))
+        updateRoundLabel(currentRound: game.currentRound.round, allRounds: game.lastRound)
     }
+    
     // MARK: - Обновление View
     
     private func shoewAlertWith(score: Int) {
@@ -45,5 +55,11 @@ class RightOnTarget: UIViewController {
     }
     private func updateLabel(newText: String) {
         label.text = newText
+    }
+    private func updateScoreLabel(newText: String) {
+        scoreLabel.text = "Очки: \(newText)"
+    }
+    private func updateRoundLabel(currentRound: Int, allRounds: Int) {
+        roundLabel.text = "Раунд: \(currentRound) / \(allRounds)"
     }
 }
