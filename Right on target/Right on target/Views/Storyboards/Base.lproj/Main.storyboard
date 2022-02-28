@@ -229,12 +229,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adp-QU-7Qf">
-                                <rect key="frame" x="363.5" y="345" width="169.5" height="38"/>
+                                <rect key="frame" x="373" y="345" width="150.5" height="38"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Обновить игру">
                                     <color key="titleColor" systemColor="systemIndigoColor"/>
                                 </state>
-                                <buttonConfiguration key="configuration" style="gray" title="Обновить игру">
+                                <buttonConfiguration key="configuration" style="gray" title="Restart game">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                     <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
