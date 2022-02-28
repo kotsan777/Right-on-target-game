@@ -1,10 +1,3 @@
-//
-//  Extension.swift
-//  Right on target
-//
-//  Created by Аслан Кутумбаев on 02.10.2021.
-//
-
 import UIKit
 extension UIColor {
     convenience init?(hex: String) {
@@ -31,7 +24,6 @@ extension UIColor {
         }
         self.init(red: r, green: g, blue: b, alpha: a)
     }
-    
     var toHex: String? {
             return toHex()
         }

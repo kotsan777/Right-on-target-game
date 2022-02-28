@@ -37,3 +37,5 @@
 - Added button "Обновить игру" - restore game
 - Added info about current score in games "Select Color" & "Right on target"
 - Added info about current round in games "Select Color" & "Right on target"
+### v1.7
+- Refactoring code
