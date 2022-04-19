@@ -74,7 +74,7 @@
 			children = (
 				BEBA17A327CCE47E003E54F8 /* Components */,
 				BEBA17A427CCE485003E54F8 /* Resources */,
-				BE631CF927057C4500FE041E /*  Models */,
+				BE631CF927057C4500FE041E /* Models */,
 				BE8716ED27CA4B7500471100 /* Views */,
 				BEFEF730271126040034EB28 /* Controllers */,
 				BE7AA26C2708A1BA00BB480E /* Extension */,
@@ -82,14 +82,14 @@
 			path = "Right on target";
 			sourceTree = "<group>";
 		};
-		BE631CF927057C4500FE041E /*  Models */ = {
+		BE631CF927057C4500FE041E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				BE631CFA27057CED00FE041E /* Game.swift */,
 				BE631CFC2706012F00FE041E /* GameRound.swift */,
 				BE631CFE270606D200FE041E /* Generator.swift */,
 			);
-			path = " Models";
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BE7AA26C2708A1BA00BB480E /* Extension */ = {
