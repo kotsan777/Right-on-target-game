@@ -35,14 +35,20 @@ class RightOnTargetGameController: UIViewController, GameProvider {
             game.calculateScore()
             game.startNewRound()
         }
-        updateLabels(secretValue: secretValue, score: game.score, currentRound: gameRound.round, allRounds: game.numberOfRounds)
+        updateLabels(secretValue: secretValue,
+                     score: game.score,
+                     currentRound: gameRound.round,
+                     allRounds: game.numberOfRounds)
     }
 
     @IBAction func restoreGame() {
         let gameRound = game.gameRound
         let secretValue = gameRound.currentSecretValue
         game.startNewGame()
-        updateLabels(secretValue: secretValue, score: game.score, currentRound: gameRound.round, allRounds: game.numberOfRounds)
+        updateLabels(secretValue: secretValue,
+                     score: game.score,
+                     currentRound: gameRound.round,
+                     allRounds: game.numberOfRounds)
     }
 
     override func viewDidLoad() {

@@ -1,41 +1,22 @@
-# IOS App
-- Only Horizontal position
-- UIKit
-- MVC
-## How to play:
-- slider have value from 1 to 50
-- tap "Проверить"
-- after tap label generate random number from 1 to 50
-- U need move slider at number that equal generated number
-- U have 5 rounds
-- after 5 rounds present you alert with your result point 
+# Right-on-target-Game
 
-## Versions:
-### v.1.0
-- Raw version
-### v1.1
-- Added viewDidLoad. You can start game without tap button "Проверить"
-### v1.2
-- Refactoring code with MVC pattern
-### v1.3
-- Refactoring code. 
-- Divide essence "Game" to "Game", "RoundGame", "Generator"
-### v1.4
-- Add new game "SelectColor"
-- Add new extension for UIColor (RGB to hex & hex to RGB)
-- Add new initial storyboard "Choose game"
-### v1.4.1
-- Refactoring code
-- Used Generic
-- Created universal architecture for 2 games
-- 2 games designed at same models
-### v1.5
-- Edited constraints for each scenes
-- Edited interface
-- Now you can navigate at the app by NavigationController
-### v1.6
-- Added button "Обновить игру" - restore game
-- Added info about current score in games "Select Color" & "Right on target"
-- Added info about current round in games "Select Color" & "Right on target"
-### v1.7
-- Refactoring code
+## Architecture pattern:
+- MVC
+
+## Scenes:
+- ChooseGameController
+<img src="https://user-images.githubusercontent.com/88779323/163988785-f9bcf322-58d2-4ae7-93c3-1359ccd1533a.png" width="896" height="414">
+
+- SelectColorController
+<img src="https://user-images.githubusercontent.com/88779323/163988806-ccec7396-880e-4848-98b3-cad1c0f2ea0e.png" width="896" height="414">
+
+- RightOnTargetController
+<img src="https://user-images.githubusercontent.com/88779323/163988816-ec7dc4fe-1a87-481d-9cd5-c45d5518774e.png" width="896" height="414">
+
+## Short description:
+- ChooseGameController.
+Firstly choose current game
+- SelectColorController - is independent game.
+You have to guess the current RGB color presented at hex.
+- RightOnTargetController - is independent game.
+You have to guess the current secret number using slider.
